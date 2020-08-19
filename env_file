@@ -1,0 +1,24 @@
+AMBIENT MODE CONFIG (DEV for development or PROD for production)
+AMBIENT_MODE=DEV
+
+DOMAINT OF YOUR SERVER (http://localhost + port for development or yoursite.com for production)
+DOMAIN_NAME=http://localhost:3000
+
+IF THE SYSTEM DOESN'T HAVE ANY REGISTERED USERS, CREATE AN ADMINISTRATOR USER WITH THIS PASSWORD
+FIRSTEMAIL=
+FIRSTPASSWORD=
+
+SERVER CONFIG
+PORT=3000
+
+DB CONFIG
+DB_HOST=
+
+JWT/SESSION CONFIG
+# AUTH_SECRET must have 64 characters     #
+# SESSION_SECRET1 must have 32 characters #
+# SESSION_SECRET2 must have 64 characters #
+
+AUTH_SECRET=
+SESSION_SECRET1=
+SESSION_SECRET2=

@@ -1,0 +1,12 @@
+{
+  "script": "bin/www",
+  "watch": "src",
+  "ignore_watch": [
+    "log",
+    "node_modules"
+  ],
+  "watch_options": {
+    "followSymlinks": false
+  },
+  "name": "ODC"
+}
