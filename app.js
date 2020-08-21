@@ -15,14 +15,9 @@ consign()
   .include('./src/config/passport.js')
   .then('./src/config/middlewares.js')
   .then('./src/config/validation.js')
-  .then('./src/config/mail.js')
   .then('./src/api')
   .then('./src/config/routes.js')
   .into(app);
-/*
-const checkAdmin = require('./src/config/checkAdmin');
-
-checkAdmin.createAdmin(); */
 
 app.listen(process.env.PORT, () => {
   console.log(`Servidor funcionando na porta ${process.env.PORT}`);

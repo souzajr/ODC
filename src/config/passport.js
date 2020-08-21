@@ -16,7 +16,7 @@ module.exports = app => {
 
   const strategy = new Strategy(params, (payload, done) => {
     User.findOne({ _id: payload.id })
-      .then(user => done(null, user || false))
+      .then(user => done(null, user))
       .catch(() => done(null, false));
   });
 

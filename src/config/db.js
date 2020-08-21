@@ -1,5 +1,6 @@
 'use strict';
 
+const requireDir = require('require-dir');
 const mongoose = require('mongoose');
 
 mongoose.set('useFindAndModify', false);
@@ -9,22 +10,21 @@ mongoose.set('useNewUrlParser', true);
 
 module.exports = {
   openConn() {
-    mongoose
-      .connect(process.env.DB_HOST)
-      .then(() =>
-        console.log(
-          '\x1b[41m\x1b[37m',
-          'SUCCESSFULLY CONNECTED TO DATABASE',
-          '\x1b[0m'
-        )
-      )
-      .catch(() =>
-        console.log(
-          '\x1b[41m\x1b[37m',
-          'ERROR CONNECTING TO DATABASE',
-          '\x1b[0m'
-        )
+    try {
+      mongoose.connect(process.env.DB_HOST);
+      requireDir('../model');
+
+      console.log(
+        '\x1b[41m\x1b[37m',
+        'CONECTADO COM SUCESSO NO BANCO DE DADOS',
+        '\x1b[0m'
       );
-    require('../model/userModel');
+    } catch (e) {
+      console.log(
+        '\x1b[41m\x1b[37m',
+        'ERRO AO SE CONECTAR COM O BANCO DE DADOS',
+        '\x1b[0m'
+      );
+    }
   },
 };
